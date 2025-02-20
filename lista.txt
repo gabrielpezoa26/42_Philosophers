@@ -8,9 +8,6 @@ Estudar
 	- clock_gettime()
 }
 
-
-
-
 parse
 {
 	verificar q é tudo numero
@@ -20,6 +17,7 @@ parse
 
 lógica principal
 {
+	decidir abordagem
 
 }
 

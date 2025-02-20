@@ -6,7 +6,7 @@
 #    By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/17 14:37:38 by gabriel           #+#    #+#              #
-#    Updated: 2025/02/20 13:03:06 by gabriel          ###   ########.fr        #
+#    Updated: 2025/02/20 13:09:56 by gabriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,14 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 #source files
-SRCS = 	src/main.c src/utils.c src/parser.c \
+SRCS = 	src/main.c src/utils.c src/parser.c src/parser_utils.c \
 
 #object directory
 OBJ_DIR = objects
 
 #object files
 OBJS = $(OBJ_DIR)/main.o $(OBJ_DIR)/parser.o $(OBJ_DIR)/utils.o \
+		$(OBJ_DIR)/parser_utils.o \
 
 all : $(NAME)
 
@@ -37,6 +38,9 @@ $(OBJ_DIR)/main.o: src/main.c | $(OBJ_DIR)
 $(OBJ_DIR)/parser.o: src/parser.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c src/parser.c -o $(OBJ_DIR)/parser.o
 
+$(OBJ_DIR)/parser_utils.o: src/parser_utils.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c src/parser_utils.c -o $(OBJ_DIR)/parser_utils.o
+	
 $(OBJ_DIR)/utils.o: src/utils.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c src/utils.c -o $(OBJ_DIR)/utils.o
 

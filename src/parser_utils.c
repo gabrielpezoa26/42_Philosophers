@@ -6,7 +6,17 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:06:27 by gabriel           #+#    #+#             */
-/*   Updated: 2025/02/20 13:06:27 by gabriel          ###   ########.fr       */
+/*   Updated: 2025/02/20 13:18:39 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "philo.h"
+
+int	ft_isdigit(int c)
+{
+	if ((c >= '0') && (c <= '9'))
+	{
+		return (1);
+	}
+	return (0);
+}
