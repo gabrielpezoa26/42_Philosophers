@@ -1,24 +1,3 @@
-----------1️⃣ Multithreading in C (pthreads)----------
-Creating and joining threads
-Detaching threads
-Thread execution and synchronization
-Passing arguments to threads
-
-----------2️⃣ Mutexes and Synchronization----------
-Mutex = prevents multiple threads from accessing the same resource at the same time.
-Deadlocks: When two or more threads are waiting on each other indefinitely.
-Race Conditions: When multiple threads access and modify shared data at the same time unpredictably.
-
-
-
-----------3️⃣ Timers and Sleep Functions----------
-You'll need precise time tracking to determine when a philosopher should eat, think, or die.
-
-----------4️⃣ Memory Management----------
-Since multiple threads access the same memory, be careful with malloc(), free(), and global variables.
-Using one global variable per program can be tricky.
-
-
 Estudar
 {
 	- pthread_create(), pthread_join(), pthread_detach()
@@ -33,5 +12,16 @@ Estudar
 
 
 parse
-tratativa de erro
-logica
+{
+	verificar q é tudo numero
+	verificar q sao numeros validos ( maior/diferente q 0, etc)
+	tratativa de erro
+}
+
+lógica principal
+{
+
+}
+
+makefile // pasta objects
+header
