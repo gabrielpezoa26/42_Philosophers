@@ -12,6 +12,7 @@ parse
 {
 	verificar q é tudo numero
 	verificar q sao numeros validos ( maior/diferente q 0, etc)
+	qtd_garfo == qtd_philo
 	tratativa de erro
 }
 
@@ -23,3 +24,7 @@ lógica principal
 
 makefile // pasta objects
 header
+
+//pthread_t potato1;
+
+pthread_create(&potato1, NULL, nome_func, NULL);

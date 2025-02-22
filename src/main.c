@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/16 16:49:56 by gabriel           #+#    #+#             */
-/*   Updated: 2025/02/20 13:19:25 by gabriel          ###   ########.fr       */
+/*   Created: 2025/02/16 16:49:56 by gcesar-n          #+#    #+#             */
+/*   Updated: 2025/02/22 17:07:12 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	printf("aaaaaa\n");
+	validate_input(argc, argv);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/17 14:22:33 by gabriel           #+#    #+#             */
-/*   Updated: 2025/02/20 13:19:14 by gabriel          ###   ########.fr       */
+/*   Created: 2025/02/17 14:22:33 by gcesar-n          #+#    #+#             */
+/*   Updated: 2025/02/22 17:07:44 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@
 # include <sys/time.h>
 # include <pthread.h>
 
-/*-----PARSE_UTILS*/
-int	ft_isdigit(int c);
+/*--------PARSE--------*/
+void	validate_input(int argc, char **argv);
+
+/*-----PARSE_UTILS-----*/
+int		ft_isdigit(int c);
+int		check_number(char *str);
 
 #endif

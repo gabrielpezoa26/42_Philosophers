@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+         #
+#    By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/17 14:37:38 by gabriel           #+#    #+#              #
-#    Updated: 2025/02/20 13:09:56 by gabriel          ###   ########.fr        #
+#    Created: 2025/02/17 14:37:38 by gcesar-n          #+#    #+#              #
+#    Updated: 2025/02/22 17:07:08 by gcesar-n         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = philo
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra
+#CFLAGS = -Wall -Werror -Wextra
 
 #source files
 SRCS = 	src/main.c src/utils.c src/parser.c src/parser_utils.c \
