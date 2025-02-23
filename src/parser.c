@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:52:26 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/22 17:07:15 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/22 17:49:20 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ static int	handle_argc_error(int arg_count)
 {
 	if (arg_count > 0 && arg_count < 6)
 	{
-		printf("not enough arguments :( (expected 6)\n");
+		printf("not enough arguments :(  (expected: 6)\n");
 		return (1);
 	}
 	if (arg_count > 6)
 	{
-		printf("too many arguments :( (expected 6)\n");
+		printf("too many arguments :(  (expected: 6)\n");
 		return (1);
 	}
 }
