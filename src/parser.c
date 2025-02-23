@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:52:26 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/22 17:49:20 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/23 00:27:39 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,18 @@ static int	handle_argc_error(int arg_count)
 	}
 }
 
+static void	is_input_valid(char **argv)
+{
+	while (argv)
+	{
+		
+	}
+}
+
 void	validate_input(int argc, char **argv)
 {
 	handle_argc_error(argc);
+
 }
 
 //	./philo number_of_philos time_to_die time_to_eat time_to_sleep

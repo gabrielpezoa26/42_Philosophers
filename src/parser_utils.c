@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:06:27 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/22 17:09:59 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/23 00:30:18 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,21 @@ int	check_arguments(int argc, char **argv)
 		}
 		i++;
 	}
+	return (0);
+}
+
+int	process_single_argument(int *argc, char ***argv)
+{
+	char	**new_argv;
+
+	if (!(*argv)[1][0])
+	{
+		printf("Errorrrr\n");
+		return (1);
+	}
+	new_argv = parse_input_string(*argv, argc);
+	if (!new_argv)
+		return (1);
+	*argv = new_argv;
 	return (0);
 }
