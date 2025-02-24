@@ -6,49 +6,67 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:52:26 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/23 13:21:29 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:22:31 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static void	handle_argc_error(int arg_count)
+static int	handle_argc_error(int arg_count)
 {
-	if (arg_count < 6)
-		printf("not enough arguments :(  (expected: 6)\n");
 	if (arg_count > 6)
-		printf("too many arguments :(  (expected: 6)\n");
+	{
+		printf("Error: Too many arguments (expected: 5 or 6).\n");
+		return (1);
+	}
+	if (arg_count < 5)
+	{
+		printf("Error: Not enough arguments (expected: 5 or 6).\n");
+		return (1);
+	}
+	return (0);
+}
+
+static int	is_valid_number(char *arg)
+{
+	int	i;
+
+	i = 0;
+	if (!arg || !arg[0])
+		return (0);
+	while (arg[i])
+	{
+		if (!ft_isdigit(arg[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 static int	input_checker(char **argv)
 {
 	int	word;
-	int	letter;
 
 	word = 1;
 	while (argv[word])
 	{
-		letter = 0;
-		while (argv[word][letter])
+		if (!is_valid_number(argv[word]) || ft_simple_atoi(argv[word]) <= 0)
 		{
-			if (argv[word][letter] == ' ')
-			{
-				letter++;
-			}
-			if (!ft_isdigit(argv[word][letter]))
-			{
-				printf("invalid input\n");
-				return (1);
-			}
-			letter++;
+			printf("Error: Invalid input '%s'.\n", argv[word]);
+			return (1);
 		}
 		word++;
 	}
 	return (0);
 }
 
-void	validate_input(int argc, char **argv)
+int	validate_input(int argc, char **argv, t_philo *philo)
 {
-	handle_argc_error(argc);
-	input_checker(argv);
+	if (handle_argc_error(argc) || input_checker(argv))
+		return (1);
+	philo->philo_amount = ft_simple_atoi(argv[1]);
+	philo->time_to_die = ft_simple_atoi(argv[2]);
+	philo->time_to_eat = ft_simple_atoi(argv[3]);
+	philo->time_to_sleep = ft_simple_atoi(argv[4]);
+	return (0);
 }

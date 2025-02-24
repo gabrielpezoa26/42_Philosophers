@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:22:33 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/23 12:51:20 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:23:51 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ typedef struct s_philo
 }	t_philo;
 
 /*--------PARSE--------*/
-void	validate_input(int argc, char **argv);
+int	validate_input(int argc, char **argv, t_philo *philo);
 
 /*-----PARSE_UTILS-----*/
-int		ft_isdigit(int c);
-int		check_number(char *str);
+int	ft_isdigit(int c);
+int	check_number(char *str);
+int	ft_simple_atoi(char *str);
 
 #endif

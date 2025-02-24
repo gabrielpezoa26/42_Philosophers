@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser_utils.c                                     :+:      :+:    :+:   */
+/*   utils_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:06:27 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/23 12:15:21 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:23:04 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,21 @@ int	check_arguments(int argc, char **argv)
 		i++;
 	}
 	return (0);
+}
+
+int	ft_simple_atoi(char *str)
+{
+	int	i;
+	int	number;
+
+	i = 0;
+	number = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		number = str[i] * 10 + (str[i] - '0');
+		i++;
+	}
+	return (number);
 }
