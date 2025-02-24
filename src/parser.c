@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:52:26 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/24 14:22:31 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:26:01 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int	input_checker(char **argv)
 	return (0);
 }
 
-int	validate_input(int argc, char **argv, t_philo *philo)
+int	validate_input(int argc, char **argv, t_general_data *philo)
 {
 	if (handle_argc_error(argc) || input_checker(argv))
 		return (1);

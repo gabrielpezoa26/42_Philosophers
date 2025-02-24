@@ -6,7 +6,7 @@
 #    By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/17 14:37:38 by gcesar-n          #+#    #+#              #
-#    Updated: 2025/02/23 13:16:38 by gcesar-n         ###   ########.fr        #
+#    Updated: 2025/02/24 14:57:22 by gcesar-n         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,14 @@ CFLAGS = -Wall -Werror -Wextra
 
 # source files
 SRCS = 	src/main.c src/utils.c src/parser.c src/utils_parsing.c \
+		src/threads.c \
 
 # object directory
 OBJ_DIR = objects
 
 # object files
 OBJS = $(OBJ_DIR)/main.o $(OBJ_DIR)/parser.o $(OBJ_DIR)/utils.o \
-		$(OBJ_DIR)/utils_parsing.o \
+		$(OBJ_DIR)/utils_parsing.o $(OBJ_DIR)/threads.o \
 
 all : $(NAME)
 
@@ -37,6 +38,9 @@ $(OBJ_DIR)/main.o: src/main.c | $(OBJ_DIR)
 
 $(OBJ_DIR)/parser.o: src/parser.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c src/parser.c -o $(OBJ_DIR)/parser.o
+
+$(OBJ_DIR)/threads.o: src/threads.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c src/threads.c -o $(OBJ_DIR)/threads.o
 
 $(OBJ_DIR)/utils_parsing.o: src/utils_parsing.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c src/utils_parsing.c -o $(OBJ_DIR)/utils_parsing.o
