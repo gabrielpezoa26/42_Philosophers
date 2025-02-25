@@ -1,30 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/16 16:49:56 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/25 16:46:14 by gcesar-n         ###   ########.fr       */
+/*   Created: 2025/02/25 16:54:11 by gcesar-n          #+#    #+#             */
+/*   Updated: 2025/02/25 16:54:32 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
-int	main(int argc, char **argv)
-{
-	t_general_data	philo;
-
-	if (validate_input(argc, argv, &philo))
-		return (1);
-	philo.philosophers = malloc(sizeof(t_philo) * philo.philo_amount);
-	if (philo.philosophers == NULL)
-	{
-		printf("Error on memory allocation \n");
-		return (1);
-	}
-	init_philosophers(&philo);
-	free(philo.philosophers);
-	return (0);
-}
