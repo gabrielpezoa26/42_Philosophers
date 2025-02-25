@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:22:33 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/24 15:47:43 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/24 21:43:47 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <sys/time.h>
 # include <pthread.h>
 
-typedef struct s_philo t_philo;
+typedef struct s_philo	t_philo;
 
 typedef struct s_general_data
 {
@@ -37,23 +37,25 @@ typedef struct s_general_data
 
 typedef struct s_philo
 {
-	int				philo_id;
-	int				eat_count;
-	long			last_ate;
-	pthread_t		thread;
-	pthread_mutex_t	eat_mutex;
-	t_general_data	*data;
+	int						philo_id;
+	int						eat_count;
+	long					last_ate;
+	pthread_t				thread;
+	pthread_mutex_t			eat_mutex;
+	struct s_general_data	*data;
 }	t_philo;
 
 /*--------PARSE--------*/
-int		validate_input(int argc, char **argv, t_general_data *philo);
+int			validate_input(int argc, char **argv, t_general_data *philo);
 
 /*-----PARSE_UTILS-----*/
-int		ft_isdigit(int c);
-int		check_number(char *str);
-int		ft_simple_atoi(char *str);
+int			ft_isdigit(int c);
+int			check_number(char *str);
+int			ft_simple_atoi(char *str);
 
 /*-------THREADS-------*/
-void	init_philosopher(void);
+pthread_t	init_philosopher(void);
+
+/*--------UTILS--------*/
 
 #endif
