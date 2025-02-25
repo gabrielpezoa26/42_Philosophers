@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:22:33 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/24 21:43:47 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/25 11:05:10 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int			check_number(char *str);
 int			ft_simple_atoi(char *str);
 
 /*-------THREADS-------*/
-pthread_t	init_philosopher(void);
+pthread_t	*init_philosophers(t_general_data *data);
 
 /*--------UTILS--------*/
 
