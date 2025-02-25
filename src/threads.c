@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:28:01 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/25 17:34:29 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/25 17:58:15 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ static void	*philo_loop(void *philo_data)
 
 	philosopher = (t_philo *)philo_data;
 	printf("%d is thinkingggggg", philosopher->philo_id);
-	usleep(100000000);  //placeholder for actions
+	usleep(100000000);//placeholder
 	return (NULL);
 }
 
-static void mango_lokooo(pthread_t *threads, t_general_data *data)
+static void	union_threads(pthread_t *threads, t_general_data *data)
 {
 	int	i;
 
@@ -55,6 +55,6 @@ pthread_t	*init_philosophers(t_general_data *data)
 		}
 		i++;
 	}
-	mango_lokooo(threads, data);
+	union_threads(threads, data);
 	return (threads);
 }

@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:06:27 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/24 14:23:04 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/25 17:49:53 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	ft_simple_atoi(char *str)
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		number = str[i] * 10 + (str[i] - '0');
+		number = number * 10 + (str[i] - '0');
 		i++;
 	}
 	return (number);
