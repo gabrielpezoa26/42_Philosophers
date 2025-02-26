@@ -6,11 +6,11 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:52:26 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/25 22:09:59 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/25 23:02:28 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 static int	handle_argc_error(int arg_count)
 {

@@ -6,8 +6,8 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:46:28 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/22 17:07:18 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/25 23:02:38 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"

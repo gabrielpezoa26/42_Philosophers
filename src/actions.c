@@ -6,16 +6,16 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:54:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/25 21:25:42 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/25 23:03:22 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 void is_sleeping(t_philo *bro)
 {
 	(void)bro;
-	printf("bro is sleepinggg\n"); // debug
+	printf("bro is sleepinggg\n");// debug
 	usleep(100000);//debug
 }
 

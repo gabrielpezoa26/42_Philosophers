@@ -6,11 +6,11 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:28:01 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/25 22:10:09 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/25 23:02:31 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 static void	*philo_loop(void *philo_data)
 {

@@ -6,11 +6,11 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:06:27 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/25 17:49:53 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/25 23:02:34 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 int	ft_isdigit(int c)
 {
