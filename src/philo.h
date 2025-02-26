@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:22:33 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/25 11:25:32 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/25 21:13:13 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct s_philo
 }	t_philo;
 
 /*--------PARSE--------*/
-int			validate_input(int argc, char **argv, t_general_data *philo);
+int			setup(int argc, char **argv);
 
 /*-----PARSE_UTILS-----*/
 int			ft_isdigit(int c);
@@ -56,6 +56,12 @@ int			ft_simple_atoi(char *str);
 /*-------THREADS-------*/
 pthread_t	*init_philosophers(t_general_data *data);
 
+/*-------ACTIONS-------*/
+void is_thinking(t_philo *bro);
+void is_eating(t_philo *bro);
+void is_sleeping(t_philo *bro);
+
 /*--------UTILS--------*/
+
 
 #endif

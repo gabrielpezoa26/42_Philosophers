@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:28:01 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/25 17:58:15 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/25 21:25:30 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,13 @@ static void	*philo_loop(void *philo_data)
 	t_philo	*philosopher;
 
 	philosopher = (t_philo *)philo_data;
-	printf("%d is thinkingggggg", philosopher->philo_id);
-	usleep(100000000);//placeholder
+	while (1)
+	{
+		is_thinking(philosopher);
+		is_eating(philosopher);
+		is_sleeping(philosopher
+		);
+	}
 	return (NULL);
 }
 
@@ -47,6 +52,7 @@ pthread_t	*init_philosophers(t_general_data *data)
 	{
 		data->philosophers[i].philo_id = i + 1;
 		data->philosophers[i].data = data;
+		printf("Creating thread for Philosopher %d\n", data->philosophers[i].philo_id);
 		if (pthread_create(&threads[i], NULL, philo_loop, (void *)&data->philosophers[i]) != 0)
 		{
 			printf("error creating the thread");

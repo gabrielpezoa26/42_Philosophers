@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:52:26 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/25 17:58:47 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/25 21:09:51 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int	input_checker(char **argv)
 	return (0);
 }
 
-int	validate_input(int argc, char **argv, t_general_data *philo)
+static int	validate_input(int argc, char **argv, t_general_data *philo)
 {
 	if (handle_argc_error(argc) || input_checker(argv))
 		return (1);
@@ -69,5 +69,26 @@ int	validate_input(int argc, char **argv, t_general_data *philo)
 	philo->time_to_die = ft_simple_atoi(argv[2]);
 	philo->time_to_eat = ft_simple_atoi(argv[3]);
 	philo->time_to_sleep = ft_simple_atoi(argv[4]);
+	printf("Parsed Values -> philo_amount: %d, time_to_die: %d, time_to_eat: %d, time_to_sleep: %d\n",
+		philo->philo_amount, philo->time_to_die, philo->time_to_eat, philo->time_to_sleep);//debug 
+	return (0);
+}
+
+int	setup(int argc, char **argv)
+{
+	t_general_data	philo;
+
+	philo.philo_amount = 0;
+	if (validate_input(argc, argv, &philo))
+		return (1);
+	philo.philosophers = malloc(sizeof(t_philo) * philo.philo_amount);
+	if (philo.philosophers == NULL)
+	{
+		printf("Error on memory allocation \n");
+		return (1);
+	}
+	printf("philo_amount after parse: %d\n", philo.philo_amount);//debug
+	init_philosophers(&philo);
+	free(philo.philosophers);
 	return (0);
 }
