@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:22:33 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/25 22:09:30 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:45:16 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct s_general_data
 	long			start_time;
 	t_philo			*philosophers;
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	print_state;
 }	t_general_data;
 
 typedef struct s_philo
@@ -57,11 +56,10 @@ int			ft_simple_atoi(char *str);
 pthread_t	*init_philosophers(t_general_data *data);
 
 /*-------ACTIONS-------*/
-void is_thinking(t_philo *bro);
-void is_eating(t_philo *bro);
-void is_sleeping(t_philo *bro);
+void		is_thinking(t_philo *bro);
+void		is_eating(t_philo *bro);
+void		is_sleeping(t_philo *bro);
 
 /*--------UTILS--------*/
-
 
 #endif
