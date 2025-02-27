@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:22:33 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/27 12:09:49 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/27 17:04:18 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_general_data
 	int				time_to_eat;
 	int				time_to_sleep;
 	int				times_must_eat;
+	pthread_mutex_t	print_mutex;
 	long			start_time;
 	t_philo			*philosophers;
 	pthread_mutex_t	*forks;
@@ -42,7 +43,9 @@ typedef struct s_philo
 	pthread_t				thread;
 	pthread_mutex_t			eat_mutex;
 	struct s_general_data	*data;
-}	t_philo;
+	pthread_mutex_t			*left_fork;
+	pthread_mutex_t			*right_fork;
+} t_philo;
 
 /*--------PARSE--------*/
 int			setup(int argc, char **argv);
@@ -57,7 +60,8 @@ pthread_t	*init_philosophers(t_general_data *data);
 
 /*-------ACTIONS-------*/
 void is_thinking(t_philo *bro, t_general_data *enviromment);
-void is_eating(t_philo *bro);
+void is_eating(t_philo *bro, t_general_data *enviromment);
+
 void is_sleeping(t_philo *bro, t_general_data *enviromment);
 
 /*--------UTILS--------*/
