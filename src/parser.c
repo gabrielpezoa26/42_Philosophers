@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:52:26 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/25 23:02:28 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/26 16:23:02 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static int	validate_input(int argc, char **argv, t_general_data *philo)
 	philo->time_to_eat = ft_simple_atoi(argv[3]);
 	philo->time_to_sleep = ft_simple_atoi(argv[4]);
 	printf("Parsed Values -> philo_amount: %d, time_to_die: %d, time_to_eat: %d, time_to_sleep: %d\n",
-		philo->philo_amount, philo->time_to_die, philo->time_to_eat, philo->time_to_sleep);//debug 
+			philo->philo_amount, philo->time_to_die, philo->time_to_eat, philo->time_to_sleep); // debug
 	return (0);
 }
 
