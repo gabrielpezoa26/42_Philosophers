@@ -6,30 +6,29 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:54:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/27 17:17:06 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/27 19:00:36 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-void is_eating(t_philo *bro, t_general_data *enviromment)
+void is_eating(t_philo *bro)
 {
-	struct timeval	current_time;
-	long			timestamp_ms;
+	struct timeval current_time;
+	long timestamp_ms;
 
 	gettimeofday(&current_time, NULL);
 	timestamp_ms = (current_time.tv_sec * 1000) + (current_time.tv_usec / 1000);
 	pthread_mutex_lock(bro->left_fork);
-	printf("%ld %d has taken a fork", timestamp_ms, bro->philo_id);
-	pthread_mutex_lock(bro->right_fork);
-	printf("%ld %d has taken a fork", timestamp_ms, bro->philo_id);
-	
-	printf("%d started eating", bro->philo_id);
-	while (gettimeofday(&current_time, NULL) < (enviromment->time_to_eat))
-		printf("%d is eating", bro->philo_id);
-	pthread_mutex_unlock(bro->left_fork);
-	pthread_mutex_unlock(bro->right_fork);
-	
+	printf("%ld %d has taken a fork\n", timestamp_ms, bro->philo_id);
+	gettimeofday(&current_time, NULL);
+	timestamp_ms = (current_time.tv_sec * 1000) + (current_time.tv_usec / 1000);
+	if (pthread_mutex_lock(bro->right_fork) != 0)
+	{
+		pthread_mutex_unlock(bro->left_fork);
+		return;
+	}
+	printf("%ld %d has taken a fork\n", timestamp_ms, bro->philo_id);
 }
 
 // 332323 7 has taken a fork

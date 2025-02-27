@@ -6,8 +6,16 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:46:28 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/25 23:02:38 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/27 19:06:05 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
+
+void init_forks(t_general_data *philo, int i)
+{
+    if (i >= philo->philo_amount)
+        return;
+    pthread_mutex_init(&philo->forks[i], NULL);
+    init_forks(philo, i + 1);
+}
