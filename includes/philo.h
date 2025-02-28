@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:22:33 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/27 19:17:15 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/27 23:06:51 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,11 @@ int			ft_simple_atoi(char *str);
 pthread_t	*init_philosophers(t_general_data *data);
 
 /*-------ACTIONS-------*/
-void		is_thinking(t_philo *bro, t_general_data *enviromment);
-void		is_eating(t_philo *bro);
-void		is_sleeping(t_philo *bro, t_general_data *enviromment);
+void		thinking(t_philo *bro, t_general_data *enviromment);
+void		eating(t_philo *bro);
+void		sleeping(t_philo *bro, t_general_data *enviromment);
 
 /*--------UTILS--------*/
+void init_forks(t_general_data *philo, int i);
 
 #endif

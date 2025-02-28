@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:28:01 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/27 19:07:17 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/27 23:06:47 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ static void	*philo_loop(void *philo_data)
 	philo = (t_philo *)philo_data;
 	while (!is_dead(philo, philo->data) || philo->eat_count <= philo->data->times_must_eat)
 	{
-		is_eating(philo);
-		is_sleeping(philo, philo->data);
-		is_thinking(philo, philo->data);
+		eating(philo);
+		sleeping(philo, philo->data);
+		thinking(philo, philo->data);
 	}
 	return (NULL);
 }
