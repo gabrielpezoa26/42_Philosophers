@@ -6,16 +6,16 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:46:28 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/28 16:39:48 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/28 19:09:40 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-void init_forks(t_general_data *philo, int i)
+void	init_forks(t_general_data *philo, int i)
 {
 	if (i >= philo->philo_amount)
-		return;
+		return ;
 	pthread_mutex_init(&philo->forks[i], NULL);
 	init_forks(philo, i + 1);
 }
@@ -43,11 +43,11 @@ int	should_continue_eating(t_philo *philo)
 		return (0);
 }
 
-int is_dead(t_philo *philosopher, t_general_data *env)
+int	is_dead(t_philo *philosopher, t_general_data *env)
 {
 	struct timeval	time;
-	long current_time_ms;
-	long time_since_last_meal;
+	long			current_time_ms;
+	long			time_since_last_meal;
 
 	gettimeofday(&time, NULL);
 	current_time_ms = (time.tv_sec * 1000) + (time.tv_usec / 1000);

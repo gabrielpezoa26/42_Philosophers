@@ -6,19 +6,18 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:28:01 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/28 12:47:50 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/28 19:12:45 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-static void	*philo_loop(void *philo_data)
+static void	*cycle(void *philo_data)
 {
 	t_philo	*philo;
 
 	philo = (t_philo *)philo_data;
 	philo->eat_count = 0;
-
 	while (should_continue_eating(philo))
 	{
 		eating(philo);
@@ -54,8 +53,8 @@ pthread_t	*init_philosophers(t_general_data *data)
 	{
 		data->philosophers[i].philo_id = i + 1;
 		data->philosophers[i].data = data;
-		printf("Creating thread for Philosopher %d\n", data->philosophers[i].philo_id);
-		if (pthread_create(&threads[i], NULL, philo_loop, (void *)&data->philosophers[i]) != 0)
+		printf("Creating Philosopher: %d\n", data->philosophers[i].philo_id);
+		if (pthread_create(&threads[i], NULL, cycle, &data->philosophers[i]))
 		{
 			printf("error creating the thread");
 			free(threads);

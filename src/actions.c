@@ -6,16 +6,16 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:54:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/28 16:48:49 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/28 19:06:30 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-static void pick_forks(t_philo *bro)
+static void	pick_forks(t_philo *bro)
 {
-	struct timeval current_time;
-	long timestamp;
+	struct timeval	current_time;
+	long			timestamp;
 
 	gettimeofday(&current_time, NULL);
 	timestamp = (current_time.tv_sec * 1000) + (current_time.tv_usec / 1000);
@@ -31,7 +31,7 @@ static void pick_forks(t_philo *bro)
 	printf("%ld %d has taken a fork\n", timestamp, bro->philo_id);
 }
 
-void eating(t_philo *bro)
+void	eating(t_philo *bro)
 {
 	pick_forks(bro);
 }

@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:52:26 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/28 12:50:13 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/28 19:13:21 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,15 +98,15 @@ static int	validate_input(int argc, char **argv, t_general_data *philo)
 		}
 	}
 	printf("Parsed Values: philo_amount: %d, time_to_die: %d, time_to_eat: %d, time_to_sleep: %d\n",
-			philo->philo_amount, philo->time_to_die, philo->time_to_eat, philo->time_to_sleep);//debug
-	if (argc == 6) // Debug
-		printf("times must eat: %d\n", philo->times_must_eat);//debug
+		philo->philo_amount, philo->time_to_die, philo->time_to_eat, philo->time_to_sleep);
+	if (argc == 6)
+		printf("times must eat: %d\n", philo->times_must_eat);
 	return (0);
 }
 
-int init_environment(int argc, char **argv)
+int	init_environment(int argc, char **argv)
 {
-	t_general_data philo;
+	t_general_data	philo;
 
 	philo.philo_amount = 0;
 	philo.times_must_eat = -1;
@@ -115,13 +115,13 @@ int init_environment(int argc, char **argv)
 	philo.philosophers = malloc(sizeof(t_philo) * philo.philo_amount);
 	if (!philo.philosophers)
 	{
-		printf("Memory allocation fail (philos) \n");
+		printf("Memory allocation fail(philos)\n");
 		return (1);
 	}
 	philo.forks = malloc(sizeof(pthread_mutex_t) * philo.philo_amount);
 	if (!philo.forks)
 	{
-		printf("Memory allocation fail (forks)\n");
+		printf("Memory allocation fail(forks)\n");
 		free(philo.philosophers);
 		return (1);
 	}
