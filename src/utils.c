@@ -6,13 +6,12 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:46:28 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/28 12:48:16 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/28 16:39:48 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-// threads
 void init_forks(t_general_data *philo, int i)
 {
 	if (i >= philo->philo_amount)
