@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:22:33 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/27 23:06:51 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/27 23:15:07 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct s_philo
 }	t_philo;
 
 /*--------PARSE--------*/
-int			setup(int argc, char **argv);
+int			init_environment(int argc, char **argv);
 
 /*-----PARSE_UTILS-----*/
 int			ft_isdigit(int c);
