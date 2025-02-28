@@ -6,33 +6,23 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:28:01 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/27 23:06:47 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/28 12:47:50 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-static int is_dead(t_philo *philosopher, t_general_data *env)
-{
-	struct timeval	time;
-	long current_time_ms;
-	long time_since_last_meal;
-
-	gettimeofday(&time, NULL);
-	current_time_ms = (time.tv_sec * 1000) + (time.tv_usec / 1000);
-	time_since_last_meal = current_time_ms - philosopher->last_ate;
-	if (time_since_last_meal > env->time_to_die)
-		return (1);
-	return (0);
-}
 static void	*philo_loop(void *philo_data)
 {
 	t_philo	*philo;
 
 	philo = (t_philo *)philo_data;
-	while (!is_dead(philo, philo->data) || philo->eat_count <= philo->data->times_must_eat)
+	philo->eat_count = 0;
+
+	while (should_continue_eating(philo))
 	{
 		eating(philo);
+		philo->eat_count++;
 		sleeping(philo, philo->data);
 		thinking(philo, philo->data);
 	}

@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:22:33 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/27 23:15:07 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/28 12:47:08 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ void		eating(t_philo *bro);
 void		sleeping(t_philo *bro, t_general_data *enviromment);
 
 /*--------UTILS--------*/
-void init_forks(t_general_data *philo, int i);
+void		init_forks(t_general_data *philo, int i);
+int	should_continue_eating(t_philo *philo);
+int			is_dead(t_philo *philosopher, t_general_data *env);
 
 #endif

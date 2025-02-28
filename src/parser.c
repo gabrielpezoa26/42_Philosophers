@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:52:26 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/27 23:19:19 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/02/28 12:50:13 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,29 +104,29 @@ static int	validate_input(int argc, char **argv, t_general_data *philo)
 	return (0);
 }
 
-
 int init_environment(int argc, char **argv)
 {
-    t_general_data philo;
+	t_general_data philo;
 
-    philo.philo_amount = 0;
-    philo.times_must_eat = -1;
-    if (validate_input(argc, argv, &philo))
-        return (1);
-    philo.philosophers = malloc(sizeof(t_philo) * philo.philo_amount);
-    if (!philo.philosophers)
-    {
-        printf("Memory allocation fail (philos) \n");
-        return (1);
-    }
-    philo.forks = malloc(sizeof(pthread_mutex_t) * philo.philo_amount);
-    if (!philo.forks)
-    {
-        printf("Memory allocation fail (forks)\n");
-        free(philo.philosophers);
-        return (1);
-    }
-    printf("philo_amount after parse: %d\n", philo.philo_amount);
-    init_philosophers(&philo);
-    return (0);
+	philo.philo_amount = 0;
+	philo.times_must_eat = -1;
+	if (validate_input(argc, argv, &philo))
+		return (1);
+	philo.philosophers = malloc(sizeof(t_philo) * philo.philo_amount);
+	if (!philo.philosophers)
+	{
+		printf("Memory allocation fail (philos) \n");
+		return (1);
+	}
+	philo.forks = malloc(sizeof(pthread_mutex_t) * philo.philo_amount);
+	if (!philo.forks)
+	{
+		printf("Memory allocation fail (forks)\n");
+		free(philo.philosophers);
+		return (1);
+	}
+	init_forks(&philo, 0);
+	printf("philo_amount after parse: %d\n", philo.philo_amount);
+	init_philosophers(&philo);
+	return (0);
 }
