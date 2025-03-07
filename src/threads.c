@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:28:01 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/02/28 19:12:45 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/03/07 07:52:52 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ pthread_t	*init_philosophers(t_general_data *data)
 	{
 		data->philosophers[i].philo_id = i + 1;
 		data->philosophers[i].data = data;
-		printf("Creating Philosopher: %d\n", data->philosophers[i].philo_id);
+		printf(" creating philosopher: %d\n", data->philosophers[i].philo_id);
 		if (pthread_create(&threads[i], NULL, cycle, &data->philosophers[i]))
 		{
-			printf("error creating the thread");
+			printf(" error creating the thread");
 			free(threads);
 			return (NULL);
 		}
